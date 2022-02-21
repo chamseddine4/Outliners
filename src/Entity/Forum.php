@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\ForumRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -19,11 +19,15 @@ class Forum
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length( min = 3, max = 20, minMessage = "Merci de Vérifier Votre titre")
+     * @Assert\NotBlank(message="Le champs nom est obligatoire * ")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length( min = 8, max = 200, minMessage = "Merci de Vérifier Votre contenu")
+     * @Assert\NotBlank(message="Le champs nom est obligatoire * ")
      */
     private $contenu;
 
@@ -66,12 +70,12 @@ class Forum
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getImage()
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(string $image)
     {
         $this->image = $image;
 

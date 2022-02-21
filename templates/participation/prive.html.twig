@@ -1,0 +1,68 @@
+{% extends 'base/base.html.twig ' %}
+
+
+{% block titre %}
+prive
+{% endblock %} 
+
+
+
+    {% block Inscription %}
+             
+
+              </a>
+              {%endblock%}
+              {% block Login %}
+          
+              {%endblock%}
+ 
+
+{% block corp%}
+
+
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+<h3  style="color:orange">participation prive de   {{ prive.nom }} </h3><br><br>
+<p>numero Telephone &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{ prive.numeroTel}}</p>
+<br>
+<p>email &nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp; {{prive.email }}</p>
+<br>
+<p>nombre de prise en charge &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{prive.nbrPrisecharge}}</p>
+<br>
+ <p>date de creation &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; {{prive.createdAt | date('d/m/Y')}} à {{prive.createdAt | date('H:i')}}</p>
+<br><br>
+
+
+<button style="margin-left:30%" class="btn btn-success" ><a href="#" style="color:white">Imprimer PDF</a></button>
+
+
+
+{%endblock%}
+
+
+
+
+{% block footer%}
+
+{%endblock%}
+

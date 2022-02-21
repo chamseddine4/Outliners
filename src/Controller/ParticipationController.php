@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\ParticipationPublic;
 use App\Entity\ParticipationPrive;
 use App\Entity\Paiement;
+use App\Form\PaiementType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\ParticipationPublicRepository;
@@ -322,6 +323,39 @@ public function deletePaiement(int $id): Response
             'Paiements' => $Paiements,
         ]); 
     } 
+
+
+
+/** 
+ * @Route("/modify-Paiement/{id}", name="modify_Paiement")
+ */
+public function modifyPaiement(Request $request, int $id): Response
+{
+    $entityManager = $this->getDoctrine()->getManager();
+
+    $Paiement = $entityManager->getRepository(Paiement::class)->find($id);
+    $form = $this->createForm(PaiementType::class, $Paiement);
+    $form->handleRequest($request);
+
+    if($form->isSubmitted() && $form->isValid())
+    {
+        $entityManager->flush();
+        return $this->redirectToRoute('verif', ['id' => $Paiement ->getId()]);
+    }
+
+    return $this->render("participation/modifier.html.twig", [
+        "form_title" => "Modifier Paiement",
+        "formPaiement" => $form->createView(),
+    ]);
+}
+
+
+
+
+
+
+
+
 
 
 }

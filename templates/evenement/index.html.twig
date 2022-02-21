@@ -11,6 +11,60 @@ evenement
 
 {% block corp%}
 
+  <section class="food_section layout_padding">
+
+
+    <div class="container">
+
+
+         <div class="heading_container heading_center">
+           <h2> Nos Evenement </h2>
+           </div>
+
+          <ul class="filters_menu">
+             <li class="active" data-filter="*">All</li>
+             <li data-filter="">sortie loisire</li>
+             <li data-filter="">event ouvrié</li>
+             <li data-filter="">voyage organizer</li>
+          </ul>
+
+      <br><br><br>
+
+      <section class="home-about-area">
+
+				<div class="container-fluid">				
+					<div class="row justify-content-center align-items-center">
+					
+    {% for evenement in evenements %}
+          	<div class="col-lg-6 no-padding home-about-left">
+							<img class="img-fluid" {{evenement.image}} alt="">
+						</div>
+						<div class="col-lg-6 no-padding home-about-right">
+                     <h1>{{evenement.nom}}</h1>  <br>
+                         <a>{{evenement.typeE}}</a>  <br>
+                         <a>{{evenement.datedebut | date('d/m/Y')}} </a>  <br>
+                         <a>{{evenement.datefin | date('d/m/Y')}} </a>  <br></br>
+                       	<p>
+				            <span>{{evenement.description}}</span>
+				                </p>
+						
+		 <button href="#" type="submit" class="btn btn-info"> particpier</button>
+   
+						</div>
+    {% endfor %}	
+
+					</div>
+
+				</div>
+      
+     
+        <br></br>
+ 
+          </div>  
+    </section>
+
+
+
 {%endblock%}
 
 

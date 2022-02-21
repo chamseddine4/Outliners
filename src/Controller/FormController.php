@@ -5,12 +5,13 @@ namespace App\Controller;
 use App\Entity\Forum;
 use App\Form\ForumType;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use App\Repository\ForumRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class FormController extends AbstractController
 {
@@ -28,7 +29,20 @@ class FormController extends AbstractController
                 $forum = new forum ();
  
                 $form = $this ->createForm(ForumType::class,$forum);
-                     
+                     //firas
+                    $file = $form->get('image')->getData();
+                    $fileName = md5(uniqid()).'.'.$file->guessExtension();
+                    try {
+                       $file->move(
+                            $this->getParameter('images_directrory'),
+                            $fileName
+                        );
+ 
+ 
+                   }catch (FileException $e){}
+                         $entityManager= $this->getDoctrine()->getManager();
+                         $forum->setImage($fileName);
+                         //firas
        
       
                 $form->handleRequest($request)  ;  

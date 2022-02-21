@@ -12,7 +12,83 @@ form
 
 {% block corp%}
 
-    
+    <!-- New Thread Modal -->
+   
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+             
+  {{ form_start (formForum)}}
+
+              
+                    <div class="modal-body">
+                        <div class="form-group">
+                          {{ form_row( formForum.titre,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
+                        </div>
+                         <div class="form-group">
+                         {{ form_row( formForum.contenu,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
+                        </div>
+                         
+                        <div class="form-group">
+                           {{ form_row( formForum.image,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
+                        </div>
+                    </div>
+                      
+                    <div class="modal-footer">
+                        <button type="button"  style="width:20%;" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                     <button type="submit" class="btn btn-success">poster</button>
+                    </div>
+     
+{{ form_end (formForum)}}
+
+            </div>
+        </div>
+    </div>
+
+
+
+<style type="text/css">
+body{
+    margin-top:20px;
+    color: #1a202c;
+    text-align: left;
+    background-color: #e2e8f0;    
+}
+
+.inner-wrapper {
+    position: relative;
+    height: calc(100vh - 3.5rem);
+    transition: transform 0.3s;
+}
+@media (min-width: 992px) {
+    .sticky-navbar .inner-wrapper {
+        height: calc(100vh - 3.5rem - 48px);
+    }
+}
+
+.inner-sidebar {
+        
+    top: 0;
+    bottom: 0;  
+    display: flex;
+    flex-direction: column;
+}
+.inner-sidebar {
+    left: 0;
+    width: 235px;
+    border-right: 1px solid #cbd5e0;
+   
+    z-index: 1;
+}
+
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+</script>
+
 
 
 {%endblock%}

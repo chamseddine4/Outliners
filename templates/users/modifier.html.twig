@@ -24,6 +24,142 @@ Modifier Profil
 
 
 
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right"  style="color:orange" > Modifier Profil </h4>
+                </div>
+                <div class="row mt-2">
+
+
+           {{ form_start (formProfil)}}
+             
+                   
+   
+              <div class="form-group">
+                    <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                  {{ form_row( formProfil.nom,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
+                </div>
+                     <div class="form-group">
+                    <label for="Surname"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                  {{ form_row( formProfil.prenom,{'attr' : {'placeholder' : "saisir votre prenom"}}) }}
+                </div>
+                          <div class="form-group">
+                    <label for="Mobile Number"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                   {{ form_row( formProfil.numeroTel,{'attr' : {'placeholder' : "saisir votre numero de telf"}}) }}
+                </div>
+                   
+               
+                <div class="form-group">
+                    <label for="email"><i class="zmdi zmdi-email"></i></label>
+              {{ form_row( formProfil.email,{'attr' : {'placeholder' : "saisir votre email"}}) }}
+                </div>
+               
+
+                <div class="form-group">
+                    <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                  
+                {{ form_row( formProfil.mot_de_passe,{'attr' : {'placeholder' : "saisir votre mot de passe"}}) }}
+                </div>
+               
+                
+        <br><br>
+          
+
+
+        <div  class="popup" onclick="myFunction()">  <input type="submit" name="signup" id="signup" class="form-submit" value="Enregistrer"/>
+  
+       <span class="popuptext" id="myPopup"> votre modification a etait Enregitrée</span>
+       </div>
+
+
+
+
+
+<style>
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+</style>
+
+
+
+
+
+
+<script>
+
+// When the user clicks on div, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+
+
+
+              
+        {{ form_end (formProfil)}}
+             </form>
+
+           </div>
+         </div>
+  
+    </div>
+  </section>
+  <!-- end book section -->
+
+
+
 {%endblock%}
 
 
