@@ -34,16 +34,20 @@ class ReclamationController extends AbstractController
                 $form->handleRequest($request)  ;  
                 
                 if ($form->isSubmitted() && $form->isValid()) {
-  
-                    $image=$request->files->get('Reclamation')['image'];
-                    $uploads_directory=$this->getParameter('uploads_directory');
-                    $filename=md5(uniqid()) . '.' . $image->guessExtension();
-                    $image->move(
-                        $uploads_directory,
-                        $filename
-                    );
-        
-                    $Reclamation->setImage($filename);
+
+
+                    //upload image
+            $uploadFile = $form['image']->getData(); // valeur  image
+            $filename = md5(uniqid()) . '.' .$uploadFile->guessExtension();//crypter image
+
+            $uploadFile->move($this->getParameter('kernel.project_dir').'/public/uploads/hotel_image',$filename);
+
+
+            $Reclamation->setImage($filename);
+
+            //-----
+
+
                          
                   $Reclamation->setCreatedAt(new \DatetimeImmutable ());
                   $entityManager->persist($Reclamation);
@@ -107,6 +111,9 @@ public function reclamation(int $id): Response
         "Reclamation" => $Reclamation,
     ]);
 }
+
+
+
 
 
 

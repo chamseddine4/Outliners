@@ -78,12 +78,9 @@
         </li>
 
 
-
-
-
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
-          <a class="nav-link" href="{{path('chat')}}">Chat</a>
+          <a class="nav-link" href="{{path('chat')}}">Forum</a>
         </li>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <li class="nav-item">
@@ -95,15 +92,26 @@
            </li>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <li class="nav-item">
-                <a class="nav-link" href="{{path('reclamationCreate')}}">reclamation</a>
+                <a class="nav-link" href="{{path('reclamationCreate')}}">Reclamation</a>
               </li>
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                    
              <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">Participation</a>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-         <a class="dropdown-item" href="{{path('participationpublic')}}" >participation public</a>
-          <a class="dropdown-item" href="{{path('participationprive')}}" >participation privee</a>
+            {% if app.user %}
+              <a class="dropdown-item" href="{{path('participationpublic')}}" >participation public</a>
+            {% else %}
+              <a class="dropdown-item" href="{{path('login')}}" >participation public</a>
+            {% endif %}
+
+              {% if app.user %}
+              <a class="dropdown-item" href="{{path('participationprive')}}" >participation privee</a>
+              {% else %}
+              <a class="dropdown-item" href="{{path('login')}}" >participation privee</a
+              {% endif %}
+
+
          </div>
             </li>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -114,8 +122,9 @@
               </li>
         </li>
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-             <div class="user_option">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <div class="user_option">
+     {% if not app.user %}
              {% block Inscription %}
               <a href="{{path('inscription')}}" class="order_online">
               Inscription
@@ -123,23 +132,25 @@
               {%endblock%}
               {% block Login %}
                 <a href="{{path('login')}}" class="order_online">
-              Login
+              connexion
               </a>
               {%endblock%}
-              </div>
-    </div>
+           {% else %}
 
- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">Profil</a>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">compte</a>
          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-         <a class="dropdown-item" href="{{path('participationpublic')}}" >modifier le compte </a>
-          <a class="dropdown-item" href="{{path('participationprive')}}" >participation privee</a>
+              <a class="dropdown-item" href="{{path('profile')}}" > profile</a>
+                <a  class="dropdown-item" href="{{path('logout')}}" > Déconnexion     </a>          
          </div>
+             {% endif %}
             </li>
+
+
 
       </ul>
       
-     
+    
   </div>
 </nav>
 

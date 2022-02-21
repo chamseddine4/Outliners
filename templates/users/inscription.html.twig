@@ -32,30 +32,25 @@ inscription
    
               <div class="form-group">
                     <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  {{ form_row( formProfil.nom,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
-                </div>
-                     <div class="form-group">
-                    <label for="Surname"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  {{ form_row( formProfil.prenom,{'attr' : {'placeholder' : "saisir votre prenom"}}) }}
+                  {{ form_row( formProfil.username,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
                 </div>
                           <div class="form-group">
                     <label for="Mobile Number"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                   {{ form_row( formProfil.numeroTel,{'attr' : {'placeholder' : "saisir votre numero de telf"}}) }}
+                   {{ form_row( formProfil.email,{'attr' : {'placeholder' : "saisir votre numero de telf"}}) }}
                 </div>
                    
                
                 <div class="form-group">
                     <label for="email"><i class="zmdi zmdi-email"></i></label>
-              {{ form_row( formProfil.email,{'attr' : {'placeholder' : "saisir votre email"}}) }}
+              {{ form_row( formProfil.password,{'attr' : {'placeholder' : "saisir votre email"}}) }}
                 </div>
                
 
                 <div class="form-group">
                     <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                   
-                {{ form_row( formProfil.mot_de_passe,{'attr' : {'placeholder' : "saisir votre mot de passe"}}) }}
+                {{ form_row( formProfil.confirm_password,{'attr' : {'placeholder' : "saisir votre mot de passe"}}) }}
                 </div>
-               
                 
                 <div class="form-group">
                     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
@@ -74,8 +69,8 @@ inscription
         <div class="col-md-6">
             <div class="signup-image" style="margin-top:12%;margin-left:20% ">
                 <figure><img style="width:60%;height:40%;margin-top:15%" src="images/signup-image.jpg" alt="sing up image"></figure>
-                
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <button href="{{path('login')}}" type="submit" class="btn btn-info"> &nbsp; I am already member</button>
+                 &nbsp; <button href="{{path('login')}}" type="submit" class="btn btn-info"> &nbsp; <a href="{{path('inscription')}}" style="color:white"> &nbsp; I am already member</a></button>
+
             </div>
         </div>
       </div>

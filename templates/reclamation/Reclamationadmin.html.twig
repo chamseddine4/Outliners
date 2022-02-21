@@ -77,7 +77,7 @@ tr:hover {background-color: coral;}
     <td>{{Reclamation.prenom}}</td>
     <td>{{Reclamation.email}}</td>
     <td>{{Reclamation.contenu}}</td>
-  <td><img src="{{ asset('uploads/' ~ Reclamation.image ) }}" alt="Image" class="image" style =" width : 500px  "></td>
+  <td><img  src ="#"  alt="Image"  style =" width : 500px  "></td>
    <td> Ecrit le {{Reclamation.createdAt | date('d/m/Y')}} à {{Reclamation.createdAt | date('H:i')}} </td>
     <td> <button class="btn btn-info" > <a href="{{ path('Reclamation', {'id': Reclamation.id}) }}" style="color:white">details</a></button></td>
      <td> <button class="btn btn-danger" ><a href="{{ path('delete_Reclamation', {'id': Reclamation.id}) }}" style="color:white">Supprimer</a></button></td>

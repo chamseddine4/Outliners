@@ -24,8 +24,6 @@
                      <!-- row -->
                      <div class="row">
 
- <!-- table section -->
- <div class="col-md-6">   
 
 <h2 style="color:orange">Users</h2>
 
@@ -36,10 +34,8 @@
 <table>
   <tr>
      <th>ID</th>
-     <th>First Name</th>
-     <th>Last Name</th>
+     <th>Nom</th>
      <th>Email</th>
-     <th>Phone</th>
      <th>Mot de passe</th>
      <th>Date de creation</th>
     <th>Modifier le compte</th>
@@ -49,19 +45,17 @@
 
  
 
-{% for Profil in Profils %}
+{% for User in Users %}
      <tr>
-      <td>{{Profil.id}}</td>
-      <td>{{Profil.nom}}</td>
-      <td>{{Profil.prenom}}</td>
-     <td>{{Profil.email}}</td>
-     <td>{{Profil.numeroTel}}</td>
-      <td>{{Profil.motdepasse}}</td>
-    <td> Ecrit le{{Profil.createdAt | date('d/m/Y')}} à {{Profil.createdAt | date('H:i')}} </td>
-<td><button class="btn btn-success" ><a href="{{ path('modify_Profil', {'id': Profil.id}) }}" style="color:white" >Modifier</a></button></td>
- <td> <button class="btn btn-danger" ><a href="{{ path('delete_Profil', {'id': Profil.id}) }}" style="color:white">Supprimer</a></button></td>
-     <td> <button class="btn btn-info" > <a href="{{ path('Profil', {'id': Profil.id}) }}" style="color:white" >consulter</a></button></td>
-      </tr>
+      <td>{{User.id}}</td>
+      <td>{{User.username}}</td>
+      <td>{{User.email}}</td>
+      <td>{{User.password}}</td>
+      <td> Ecrit le{{User.createdAt | date('d/m/Y')}} à {{User.createdAt | date('H:i')}} </td>
+      <td><button class="btn btn-success" ><a href="{{ path('modify_Profil', {'id': User.id}) }}" style="color:white" >Modifier</a></button></td>
+      <td> <button class="btn btn-danger" ><a href="{{ path('delete_Profil', {'id': User.id}) }}" style="color:white">Supprimer</a></button></td>
+      <td> <button class="btn btn-info" > <a href="{{ path('Profil', {'id': User.id}) }}" style="color:white" >consulter</a></button></td>
+       </tr>
 
 
 {% endfor %}
@@ -74,13 +68,13 @@
 
 table {
   border-collapse: collapse;
-  width: 210%;
-  height : 200%;
+  width: 160%;
+  height : 250%;
   color:black;
 }
 
 th, td {
-  padding: 8px;
+  padding: 7px;
   text-align: left;
   border-bottom: 1px solid #ddd;
   

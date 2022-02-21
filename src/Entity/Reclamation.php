@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ReclamationRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ReclamationRepository::class)
@@ -48,9 +48,16 @@ class Reclamation
     private $contenu;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255,)
+     *
      */
     private $image;
+
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
+    
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -115,7 +122,7 @@ class Reclamation
         return $this->image;
     }
 
-    public function setImage( $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -133,4 +140,10 @@ class Reclamation
 
         return $this;
     }
+
+
+
+
+
+
 }

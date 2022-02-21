@@ -2,43 +2,50 @@
 
 namespace App\Controller;
 
-use App\Entity\Profil;
+use App\Entity\User;
+use App\Form\UserType;
 use App\Form\ProfilType;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use App\Repository\ProfilRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-
-
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 
 class UsersController extends AbstractController
 {
 
-    /** 
+   
+      /** 
      * @Route("/inscription", name="inscription")
      */
 
-    public function create (Request $request ,EntityManagerInterface $entityManager  )
+    public function create (Request $request ,EntityManagerInterface $entityManager , UserPasswordEncoderInterface $encoder  )
     { 
+       
+      $User = new User ();
 
-      $Profil = new Profil ();
-
-  $form = $this ->createForm(ProfilType::class,$Profil);
+       $form = $this ->createForm(UserType::class,$User);
              
 
           $form->handleRequest($request)  ;  
           
           if ($form->isSubmitted() && $form->isValid()) {
-            $Profil->setCreatedAt(new \DatetimeImmutable ());
-            $entityManager->persist($Profil);
+
+            $hash = $encoder->encodePassword($User, $User->getPassword());
+
+            $User->setPassword($hash);
+            $User->setCreatedAt(new \DatetimeImmutable ());
+            $entityManager->persist($User);
             $entityManager->flush();
 
 
-            return $this->redirectToRoute('Users', ['id' => $Profil ->getId()]);
+            return $this->redirectToRoute('login');
 
           }
          
@@ -56,15 +63,15 @@ class UsersController extends AbstractController
 
     
     /**
- * @Route("/profil/{id}", name="Profil")
+ * @Route("/profiluser/{id}", name="Profil")
  */
-    public function profil(int $id): Response
+    public function profiluser(int $id): Response
     {
 
-        $Profil = $this->getDoctrine()->getRepository(Profil::class)->find($id);
+        $User = $this->getDoctrine()->getRepository(User::class)->find($id);
 
         return $this->render('users/profil.html.twig', [
-            "Profil" => $Profil,
+            "User" => $User,
         ]);
     }
 
@@ -81,12 +88,12 @@ class UsersController extends AbstractController
     public function Users(Request $request ,EntityManagerInterface $entityManager)
     {
 
-        $repo = $this ->getDoctrine()->getRepository(Profil::class);
-        $Profils=$repo->findAll();
+        $repo = $this ->getDoctrine()->getRepository(User::class);
+        $Users=$repo->findAll();
 
         return $this->render('users/Users.html.twig', [
             'controller_name' => 'UsersController',
-            'Profils' => $Profils
+            'Users' => $Users
         ]);
     }
 
@@ -101,10 +108,11 @@ class UsersController extends AbstractController
  */
 public function modifyProfil(Request $request, int $id): Response
 {
+   
     $entityManager = $this->getDoctrine()->getManager();
 
-    $Profil = $entityManager->getRepository(Profil::class)->find($id);
-    $form = $this->createForm(ProfilType::class, $Profil);
+    $User = $entityManager->getRepository(User::class)->find($id);
+    $form = $this->createForm(UserType::class, $User);
     $form->handleRequest($request);
 
     if($form->isSubmitted() && $form->isValid())
@@ -119,15 +127,14 @@ public function modifyProfil(Request $request, int $id): Response
 }
 
 
-
     /**
  * @Route("/delete-Profil/{id}", name="delete_Profil")
  */
 public function deleteReclamation(int $id): Response
 {
     $entityManager = $this->getDoctrine()->getManager();
-    $Profil = $entityManager->getRepository(Profil::class)->find($id);
-    $entityManager->remove($Profil);
+    $User = $entityManager->getRepository(User::class)->find($id);
+    $entityManager->remove($User);
     $entityManager->flush();
 
     return $this->redirectToRoute("Users");
@@ -135,21 +142,77 @@ public function deleteReclamation(int $id): Response
 
 
 
- 
 
 
-
-
-
-          /**
+     /**
      * @Route("/login", name="login")
      */
-    public function login(): Response
+    public function login(AuthenticationUtils $utils)
     {
+
+       $error = $utils ->getLastAuthenticationError();
+
+
         return $this->render('users/login.html.twig', [
-            'controller_name' => 'UsersController',
+            'hasError' => $error !== null 
+        
         ]);
     }
+
+    
+
+          /**
+     * @Route("/logout", name="logout")
+     */
+    public function logout()
+    {
+    }
+
+
+
+
+
+
+
+
+     /**
+     * @Route("/profile", name="profile")
+     */
+    public function profileModifier(Request $request,EntityManagerInterface $entityManager)
+    {
+        $User = $this->getUser();
+        $form = $this->createForm(ProfilType::class, $User);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager->persist($User);
+            $entityManager->flush();
+            return $this->redirectToRoute('post');
+ }
+
+
+        return $this->render('users/profile.html.twig',[
+            "form" => $form->createView(),
+        ]);
+    }
+
+
+
+     
+    /**
+     * @Route("/myaccounty", name="myaccounty")
+     */
+    public function myaccounty()
+    {
+        return $this->render('users/index.html.twig', [
+           'User' => $this->getUser()
+        ]);
+    }    
+      
+
+
+
 
 
      
@@ -158,11 +221,12 @@ public function deleteReclamation(int $id): Response
      */
     public function General(): Response
     {
+
+        
         return $this->render('users/General.html.twig', [
             'controller_name' => 'UsersController',
         ]);
-    }
-         
+    }    
       
 }
 

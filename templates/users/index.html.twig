@@ -7,18 +7,7 @@ Profil
 
 
 
-    {% block Inscription %}
-             
-
-              </a>
-              {%endblock%}
-              {% block Login %}
-          
-              {%endblock%}
- 
-
 {% block corp%}
-
 
 
 
@@ -37,12 +26,10 @@ Profil
 
 
 
-
-
-                    <div class="col-md-6"><label class="labels">Surname</label><output type="text" class="form-control" >{{User.username}}</div>
+                    <div class="col-md-6"><label class="labels">Surname</label>{{User.username}}</div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><output type="text" class="form-control">{{User.email}}</div>
+                    <div class="col-md-12"><label class="labels">email</label><output type="text" class="form-control">{{User.email}}</div>
                   </div>
                                 <div class="row mt-3">
                        <div class="col-md-12"><label class="labels">password</label><output type="password" class="form-control" >{{User.password}}</div>
@@ -65,10 +52,4 @@ Profil
 
 {%endblock%}
 
-
-
-
-{% block footer%}
-
-{%endblock%}
 

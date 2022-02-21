@@ -2,35 +2,29 @@
 
 namespace App\Form;
 
-use App\Entity\Reclamation;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-
-
-
-
-class ReclamationType extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nom')
-            ->add('prenom')
             ->add('email')
-            ->add('contenu')
-            ->add('image',FileType::class, array('data_class' => null))
-           
-           
+            ->add('username')
+            ->add('password' ,PasswordType::class)
+            ->add('confirm_password' , PasswordType::class)
+
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Reclamation::class,
+            'data_class' => User::class,
         ]);
     }
 }
