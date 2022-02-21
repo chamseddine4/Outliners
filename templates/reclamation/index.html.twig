@@ -12,7 +12,46 @@ reclamation
 {% block corp%}
 
 
-   
+     
+<link rel="stylesheet" href="css/reclamation.css">
+<div class="wrapper">
+    <div class="title">
+      reclamation
+    </div>
+    
+  {{ form_start (formReclamation)}}
+       <div class="inputfield">
+        
+        {{ form_row( formReclamation.nom,{'attr' : {'placeholder' : "saisir votre nom"}}) }}
+       </div>  
+        <div class="inputfield">
+        
+         {{ form_row( formReclamation.prenom,{'attr' : {'placeholder' : "saisir votre prenom"}}) }}
+       </div>  
+     
+        <div class="inputfield">
+      
+       {{ form_row( formReclamation.email,{'attr' : {'placeholder' : "saisir votre email"}}) }}
+       </div> 
+    
+      <div class="inputfield">
+      
+        {{ form_row( formReclamation.contenu,{'attr' : {'placeholder' : "saisir votre contenu"}}) }}
+       </div> 
+         <div class="inputfield">
+      
+         {{ form_row( formReclamation.image,{'attr' : {'placeholder' : "saisir votre image"}}) }}
+              
+       </div> 
+        <button type="submit" class="btn btn-success">Registrer</button>
+     
+    </div>
+
+{{ form_end (formReclamation)}}
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="width:25%;height:40%;margin-top:-55% ;margin-left:70%" src="images/reclamation.jpg" alt="sing up image">
+
+
 {%endblock%}
 
 

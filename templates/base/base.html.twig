@@ -114,11 +114,8 @@
               </li>
         </li>
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      </ul>
-      
-     <div class="user_option">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+             <div class="user_option">
              {% block Inscription %}
               <a href="{{path('inscription')}}" class="order_online">
               Inscription
@@ -131,6 +128,18 @@
               {%endblock%}
               </div>
     </div>
+
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuButton" aria-haspopup="true" aria-expanded="false">Profil</a>
+         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+         <a class="dropdown-item" href="{{path('participationpublic')}}" >modifier le compte </a>
+          <a class="dropdown-item" href="{{path('participationprive')}}" >participation privee</a>
+         </div>
+            </li>
+
+      </ul>
+      
+     
   </div>
 </nav>
 

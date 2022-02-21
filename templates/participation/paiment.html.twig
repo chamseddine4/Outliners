@@ -16,6 +16,135 @@ paiment
 
 
 
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+
+
+     
+     {{ form_start (formPaiement)}}
+      
+                <div class="col-50">
+                 <br>
+                 <h3>Paiment</h3>
+                 <br>
+
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+
+              {{ form_row( formPaiement.NomSurCarte,{'attr' : {'placeholder' : "saisir le nom sur la carte"}}) }}
+            <br>
+
+            {{ form_row( formPaiement.NumCarte,{'attr' : {'placeholder' : "saisir Numéro de Carte de Crédit"}}) }}
+            <br>
+
+            {{ form_row( formPaiement.MoisExp,{'attr' : {'placeholder' : "saisir votre Mois Exp"}}) }}
+            <br>
+
+            <div class="row">
+              <div class="col-50">
+               {{ form_row( formPaiement.AnneeExp,{'attr' : {'placeholder' : "saisir votre année Exp"}}) }}
+              </div>
+
+              <div class="col-50">
+                  {{ form_row( formPaiement.CVV,{'attr' : {'placeholder' : "saisir votre CVV"}}) }}
+              </div>
+
+
+            </div>
+          </div>
+          
+        </div>
+        
+              <div class="form-group form-button">
+                  <a href="{{path('verif')}}">  <input type="submit" name="signup" id="signup" class="form-submit" value="payer"/></a>
+                </div>
+
+        <br><br><br><br><br>
+
+    {{ form_end (formPaiement)}}
+      
+
+            
+
+            
+    </div>
+  </div>
+</div>
+
+<style>
+
+  
+ 
+  
+  .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+  }
+  
+  .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+  }
+  
+  .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+  }
+  
+  .col-25,
+  .col-50,
+  .col-75 {
+    padding: 0 16px;
+  }
+ 
+
+
+  
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+  }
+  
+  .btn {
+    background-color: #c4ad2b;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 30%;
+    margin-left: 36%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+
+
+ 
+  </style>
+
+
+
 {%endblock%}
 
 

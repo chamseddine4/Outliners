@@ -12,6 +12,166 @@
 
 
 
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color:black;
+}
+
+tr:hover {background-color: coral;}
+</style>
+</head>
+<body>
+<br><br><br>
+<h2 style="color:orange" > les messages </h2>
+<br><br><br>
+
+
+
+
+<table>
+  <tr>
+   <th>ID</th>
+    <th>Titre</th>
+    <th>contenu</th>
+    <th>image</th>
+    <th>date de creation</th>
+      <th>consulter</th>
+      <th>Supprimer</th>
+    
+  </tr>
+
+ 
+   {% for forum in forums %}
+    <tr>
+    <td>{{forum.id }}</td> 
+    <td>{{forum.titre}}</td>
+    <td>{{forum.contenu}}</td>
+    <td>{{forum.image}}</td>
+   <td> Ecrit le {{forum.createdAt | date('d/m/Y')}} à {{forum.createdAt | date('H:i')}} </td>
+   <td> <button class="btn btn-info" > <a href="{{ path('detailforum', {'id': forum.id}) }}" style="color:white">details</a></button></td>
+     <td> <button class="btn btn-danger" ><a href="{{ path('delete_forum', {'id': forum.id}) }}" style="color:white">Supprimer</a></button></td>
+    
+
+    
+  </tr>
+  {% endfor %}
+  
+</table>
+<br><br>
+
+
+
+
+<style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Roboto, Helvetica, sans-serif;
+      }
+      /* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+      .open-btn {
+        display: flex;
+        justify-content: flex-start;
+      }
+      /* Stylez et fixez le bouton sur la page */
+      .open-button {
+        background-color: #1c87c9;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+      }
+      /* Positionnez la forme Popup */
+      .login-popup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      /* Masquez la forme Popup */
+      .form-popup {
+        display: none;
+        position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-45%, 5%);
+        border: 2px solid #666;
+        z-index: 9;
+      }
+      /* Styles pour le conteneur de la forme */
+      .form-container {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      /* Largeur complète pour les champs de saisie */
+      .form-container input[type="text"],
+      .form-container input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #eee;
+      }
+      /* Quand les entrées sont concentrées, faites quelque chose */
+      .form-container input[type="text"]:focus,
+      .form-container input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      /* Stylez le bouton de connexion */
+      .form-container .btn {
+        background-color: #8ebf42;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+      /* Stylez le bouton pour annuler */
+      .form-container .cancel {
+        background-color: #cc0000;
+      }
+      /* Planez les effets pour les boutons */
+      .form-container .btn:hover,
+      .open-button:hover {
+        opacity: 1;
+      }
+    </style>
+
+
+
+ <script>
+      function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
 
 
  {% endblock %}
