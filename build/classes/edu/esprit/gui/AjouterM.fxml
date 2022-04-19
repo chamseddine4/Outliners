@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="486.0" prefWidth="706.0" style="-fx-background-color: #C4EEF2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.AjouterMController">
+   <children>
+      <Accordion />
+      <Accordion layoutX="33.0" layoutY="161.0" />
+      <TextField fx:id="tfTITRE" layoutX="188.0" layoutY="230.0" prefHeight="26.0" prefWidth="242.0" promptText="titre">
+         <effect>
+            <DropShadow />
+         </effect></TextField>
+      <TextArea fx:id="tfMESSAGE" layoutX="188.0" layoutY="289.0" prefHeight="70.0" prefWidth="298.0" promptText="EXPRESS YOUR SELF">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextArea>
+      <ImageView fx:id="image" fitHeight="130.0" fitWidth="203.0" layoutX="24.0" layoutY="86.0" opacity="0.52" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@kisspng-internet-forum-computer-icons-online-chat-5ae45399e69536.9402283915249130499445.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="188.0" layoutY="161.0" text="WHAT'S ON YOUR MIND ?" textFill="#00f2ee">
+         <font>
+            <Font name="Segoe UI Bold" size="26.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <MenuBar layoutX="-7.0" prefHeight="86.0" prefWidth="797.0" style="-fx-background-color: #6C80B8;" />
+      <Button layoutX="448.0" layoutY="377.0" mnemonicParsing="false" onAction="#ajouterMessage" prefHeight="50.0" prefWidth="78.0" style="-fx-background-color: #FF6347;" text="BACK">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="551.0" layoutY="377.0" mnemonicParsing="false" onAction="#ajouterMessage" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #48ffc2;" text="SHARE">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="68.0" layoutY="299.0" prefHeight="50.0" prefWidth="106.0" text="MESSAGE" textFill="#00f2ee">
+         <font>
+            <Font name="Segoe UI Bold" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="68.0" layoutY="218.0" prefHeight="50.0" prefWidth="100.0" text="TITLE" textFill="#00f2ee">
+         <font>
+            <Font name="Segoe UI Bold" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label fx:id="Erreur" layoutX="502.0" layoutY="220.0" prefHeight="70.0" prefWidth="271.0" textFill="#ec0a0a">
+         <font>
+            <Font name="Segoe UI Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
