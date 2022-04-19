@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="522.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.BackController">
+   <children>
+      <TableView fx:id="table" layoutX="221.0" layoutY="102.0" prefHeight="346.0" prefWidth="446.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="77.0" text="ID" />
+          <TableColumn fx:id="numeroCol" prefWidth="158.0" text="Numéro Téléphone" />
+            <TableColumn fx:id="nbrCol" prefWidth="211.0" text="Nombre prise en charge" />
+        </columns>
+      </TableView>
+      <MenuBar layoutX="173.0" layoutY="-1.0" prefHeight="82.0" prefWidth="655.0" style="-fx-background-color: #483D8B;" />
+      <Pane prefHeight="536.0" prefWidth="172.0" style="-fx-background-color: #483D8B;">
+         <children>
+            <ImageView fitHeight="88.0" fitWidth="142.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@street-beggar-hungry-man-asks-money-mug-hand-72811677.jpg" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Button layoutX="7.0" layoutY="195.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #d6ac22;" text="Privé" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="235.0" mnemonicParsing="false" onAction="#back2" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #d6ac22;" text="Public" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="275.0" mnemonicParsing="false" onAction="#back3" prefHeight="31.0" prefWidth="151.0" style="-fx-background-color: #d6ac22;" text="Paiement" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Label layoutX="413.0" layoutY="4.0" prefHeight="74.0" prefWidth="151.0" text="Privé" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="54.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="108.0" layoutX="698.0" layoutY="435.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+   </children>
+</AnchorPane>
