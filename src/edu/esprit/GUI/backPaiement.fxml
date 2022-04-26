@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="737.0" prefWidth="1128.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.BackPaiementController">
+   <children>
+      <TableView fx:id="tablePaiement" layoutX="199.0" layoutY="161.0" prefHeight="359.0" prefWidth="746.0">
+        <columns>
+          <TableColumn fx:id="idNompaie" prefWidth="210.0" text="Nom sur carte" />
+            <TableColumn fx:id="idNumpaie" prefWidth="175.0" text="Numéro du carte" />
+            <TableColumn fx:id="idMoispaie" prefWidth="130.0" text="Mois Exp" />
+            <TableColumn fx:id="idAnneepaie" prefWidth="130.0" text="Annee Exp" />
+            <TableColumn fx:id="idCVVpaie" prefWidth="99.0" text="CVV" />
+            <TableColumn fx:id="idID" prefWidth="99.0" text="ID" />
+        </columns>
+      </TableView>
+      <Pane layoutX="-3.0" prefHeight="737.0" prefWidth="185.0" style="-fx-background-color: #483D8B;">
+         <children>
+            <ImageView fitHeight="88.0" fitWidth="142.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@street-beggar-hungry-man-asks-money-mug-hand-72811677.jpg" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Button layoutX="7.0" layoutY="195.0" mnemonicParsing="false" onAction="#Prive" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #d6ac22;" text="Privé" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="235.0" mnemonicParsing="false" onAction="#Public" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #d6ac22;" text="Public" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="275.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="169.0" style="-fx-background-color: #d6ac22;" text="Paiement" textFill="WHITE" />
+         </children>
+      </Pane>
+      <MenuBar layoutX="183.0" prefHeight="99.0" prefWidth="945.0" style="-fx-background-color: #483D8B;" />
+      <Label layoutX="513.0" layoutY="14.0" prefHeight="74.0" prefWidth="254.0" text="Paiement" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="54.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="137.0" fitWidth="142.0" layoutX="954.0" layoutY="573.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+      <Button layoutX="372.0" layoutY="549.0" mnemonicParsing="false" onAction="#dell" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #D9362B;" text="Delete" textFill="#f5f3f3">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="513.0" layoutY="549.0" mnemonicParsing="false" onAction="#pdf2" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #2BA0D9;" text="PDF" textFill="#f5f3f3">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

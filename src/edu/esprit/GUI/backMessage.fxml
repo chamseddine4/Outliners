@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="562.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.GUI.BackMessageController">
+   <children>
+      <TableView fx:id="tableM" layoutX="166.0" layoutY="167.0" prefHeight="132.0" prefWidth="467.0">
+        <columns>
+          <TableColumn fx:id="idID" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="idTitre" prefWidth="129.5999755859375" text="titre" />
+            <TableColumn fx:id="idMessage" prefWidth="266.4000244140625" text="message" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableR" layoutX="165.0" layoutY="348.0" prefHeight="132.0" prefWidth="467.0">
+         <columns>
+            <TableColumn fx:id="idRep" prefWidth="75.0" text="id" />
+            <TableColumn fx:id="idRating" prefWidth="129.5999755859375" text="rating" />
+            <TableColumn fx:id="idReply" prefWidth="272.79999389648435" text="reply" />
+         </columns>
+      </TableView>
+      <Pane layoutY="-1.0" prefHeight="566.0" prefWidth="134.0" style="-fx-background-color: #483D8B;">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="97.0" layoutX="25.0" layoutY="15.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@street-beggar-hungry-man-asks-money-mug-hand-72811677.jpg" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Button layoutX="7.0" layoutY="235.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="116.0" style="-fx-background-color: #d6ac22;" text="Forum" textFill="WHITE" />
+            <Button layoutX="21.0" layoutY="504.0" mnemonicParsing="false" onAction="#message" style="-fx-background-color: #d6ac22;" text="front message" textFill="WHITE" />
+         </children>
+      </Pane>
+      <MenuBar layoutX="129.0" layoutY="-6.0" prefHeight="98.0" prefWidth="572.0" style="-fx-background-color: #483D8B;" />
+      <Label layoutX="301.0" layoutY="16.0" prefHeight="74.0" prefWidth="242.0" text="Save Me" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="54.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="82.0" fitWidth="108.0" layoutX="579.0" layoutY="481.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+      <Label layoutX="166.0" layoutY="104.0" prefHeight="60.0" prefWidth="326.0" text="messages" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="166.0" layoutY="299.0" prefHeight="60.0" prefWidth="326.0" text="replys" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="609.0" layoutY="134.0" mnemonicParsing="false" onAction="#dell" text="supprimer" />
+      <Button layoutX="609.0" layoutY="316.0" mnemonicParsing="false" onAction="#dell1" text="supprimer" />
+
+      <Label fx:id="mod" layoutX="597.0" layoutY="104.0" prefHeight="18.0" prefWidth="70.0" />
+   </children>
+</AnchorPane>

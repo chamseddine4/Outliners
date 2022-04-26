@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.AjouterReclamationController">
+   <children>
+      <ImageView fitHeight="511.0" fitWidth="935.0" layoutY="96.0" opacity="0.66" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@reclamation.jpg" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+      <MenuBar layoutY="-1.0" prefHeight="97.0" prefWidth="935.0" style="-fx-background-color: #6C80B8;" />
+      <Label layoutX="335.0" layoutY="12.0" prefHeight="74.0" prefWidth="242.0" text="Save Me" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="54.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfRec1" layoutX="210.0" layoutY="240.0" prefHeight="26.0" prefWidth="242.0" promptText="titre">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <TextArea fx:id="tfRec2" layoutX="210.0" layoutY="299.0" prefHeight="70.0" prefWidth="298.0" promptText="EXPRESS YOUR SELF">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextArea>
+      <Label layoutX="78.0" layoutY="228.0" prefHeight="50.0" prefWidth="100.0" text="TITLE" textFill="#00f2ee">
+         <font>
+            <Font name="Segoe UI Bold" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="78.0" layoutY="309.0" prefHeight="50.0" prefWidth="106.0" text="CONTENU" textFill="#00f2ee">
+         <font>
+            <Font name="Segoe UI Bold" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Button layoutX="446.0" layoutY="399.0" mnemonicParsing="false" onAction="#ajouterReclamation" prefHeight="50.0" prefWidth="85.0" style="-fx-background-color: #48ffc2;" text="SHARE">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label layoutX="45.0" layoutY="126.0" prefHeight="46.0" prefWidth="219.0" text="Reclamation :" textFill="#f48422">
+         <font>
+            <Font name="Bell MT Bold" size="35.0" />
+         </font>
+      </Label>
+      <Button layoutX="821.0" layoutY="543.0" mnemonicParsing="false" onAction="#retour0" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #FF6347;" text="Admin">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
