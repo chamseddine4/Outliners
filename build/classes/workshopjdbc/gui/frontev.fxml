@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="569.0" prefWidth="874.0" style="-fx-background-color: #C4EEF2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="workshopjdbc.gui.FrontevController">
+   <children>
+      <MenuBar layoutX="-21.0" layoutY="-43.0" prefHeight="129.0" prefWidth="878.0" style="-fx-background-color: #6C80B8;" AnchorPane.leftAnchor="-21.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-43.0" />
+      <ImageView fx:id="image1" fitHeight="86.0" fitWidth="78.0" layoutX="1.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="107.0" layoutY="7.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="78.0" style="-fx-background-color: #6C80B8;" text="Home" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="190.0" layoutY="13.0" mnemonicParsing="false" onAction="#Forum" prefHeight="58.0" prefWidth="61.0" style="-fx-background-color: #6C80B8;" text="Forum" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="263.0" layoutY="14.0" mnemonicParsing="false" onAction="#profilSDF" prefHeight="58.0" prefWidth="68.0" style="-fx-background-color: #6C80B8;" text="Profil SDF" textFill="WHITE" />
+      <Button layoutX="344.0" layoutY="15.0" mnemonicParsing="false" onAction="#frontev" prefHeight="58.0" prefWidth="78.0" style="-fx-background-color: #6C80B8;" text="Evenement" textFill="WHITE" />
+      <Button layoutX="420.0" layoutY="15.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="58.0" prefWidth="96.0" style="-fx-background-color: #6C80B8;" text="Reclamtion" textFill="WHITE" />
+      <Button layoutX="705.0" layoutY="15.0" mnemonicParsing="false" onAction="#profil" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #D9DC7D;" text="modifier profil" />
+      <Button layoutX="731.0" layoutY="52.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: RED;" text="Log Out ">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+      <Button layoutX="524.0" layoutY="17.0" mnemonicParsing="false" onAction="#prive" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: #6C80B8;" text="Participation prive" textFill="WHITE" />
+      <Button layoutX="526.0" layoutY="44.0" mnemonicParsing="false" onAction="#ppublic" prefHeight="26.0" prefWidth="130.0" style="-fx-background-color: #6C80B8;" text="Participation public" textFill="WHITE" />
+      <TableView fx:id="table_e" layoutX="44.0" layoutY="228.0" onMouseClicked="#getSelected" prefHeight="264.0" prefWidth="798.0">
+         <columns>
+            <TableColumn fx:id="nom_e" text="Nom" />
+            <TableColumn fx:id="type_e" prefWidth="97.5999755859375" text="type" />
+            <TableColumn fx:id="date_debut" prefWidth="121.60006713867188" text="Date de début" />
+            <TableColumn fx:id="date_fin" prefWidth="129.5999755859375" text="Date de fin" />
+            <TableColumn fx:id="des_e" prefWidth="223.99993896484375" text="description" />
+         </columns>
+      </TableView>
+      <Label layoutX="44.0" layoutY="118.0" prefHeight="46.0" prefWidth="373.0" style="-fx-background-color: #6C80B8;" text="Evenements :" textFill="#eae5e5">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

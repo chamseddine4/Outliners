@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="AnchorPane" minHeight="692.0" prefHeight="841.0" prefWidth="1131.0" style="-fx-background-color: #C4EEF2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="workshopjdbc.gui.FrontForumController">
+   <children>
+      <ImageView fx:id="image2" fitHeight="740.0" fitWidth="1131.0" layoutX="16.0" layoutY="101.0" opacity="0.27" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@5922064-discussion-forum-word-concepts-blue-banner-elearning-infographics-with-linear-icons-on-background-isolated-typography-vector-color-illustration-with-text-arial-black-police-used-vectoriel.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image" fitHeight="161.0" fitWidth="212.0" layoutX="800.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@loading-paper-airplane.gif" />
+         </image>
+      </ImageView>
+      <Button layoutX="379.0" layoutY="126.0" mnemonicParsing="false" onAction="#from" prefHeight="56.0" prefWidth="528.0" style="-fx-background-color: #48ffc2; -fx-background-radius: 30;" text="WHAT'S ON YOUR MIND ?" textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="26.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Label fx:id="Erreur" layoutX="715.0" layoutY="70.0" prefHeight="56.0" prefWidth="364.0" textFill="RED">
+         <font>
+            <Font name="Segoe UI Black Italic" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <TableView fx:id="tableM" cache="true" cacheHint="QUALITY" layoutX="122.0" layoutY="554.0" onMouseClicked="#enforumClick" prefHeight="202.0" prefWidth="421.0" style="-fx-background-color: #C4EEF2;">
+         <columns>
+            <TableColumn fx:id="idID" prefWidth="131.0" style="-fx-background-color: #C4EEF2;" />
+            <TableColumn fx:id="idTitre" prefWidth="134.0" sortType="DESCENDING" style="-fx-background-color: #C4EEF2;" />
+            <TableColumn fx:id="idMessage" prefWidth="213.0" style="-fx-background-color: #C4EEF2;" />
+         </columns>
+      </TableView>
+      <TableView fx:id="tableR" layoutX="690.0" layoutY="554.0" prefHeight="202.0" prefWidth="374.0" style="-fx-background-color: #C4EEF2; -fx-background-position: center;">
+        <columns>
+          <TableColumn fx:id="idRating" prefWidth="118.0" style="-fx-background-color: #C4EEF2;" />
+            <TableColumn fx:id="idRep" prefWidth="255.0" style="-fx-background-color: #C4EEF2;" />
+        </columns>
+      </TableView>
+      <TextArea fx:id="tfreply" layoutX="460.0" layoutY="286.0" prefHeight="95.0" prefWidth="334.0" promptText="EXPRESS YOUR SELF">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextArea>
+      <Button layoutX="842.0" layoutY="259.0" mnemonicParsing="false" onAction="#ajouterReply" opacity="0.0" prefHeight="70.0" prefWidth="78.0" style="-fx-background-color: #48ffc2;" text="SHARE">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <TextField fx:id="messNumber" layoutX="171.0" layoutY="294.0" prefHeight="63.0" prefWidth="36.0" promptText="00">
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Button layoutX="224.0" layoutY="509.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="227.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 30;" text="titre " textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="75.0" layoutY="509.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="227.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 30;" text="numeros des messages" textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="400.0" layoutY="509.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="174.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 30;" text="messages" textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="113.0" layoutY="217.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #9370DB; -fx-background-radius: 30;" text="numero de message" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="288.0" layoutY="217.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="154.0" style="-fx-background-color: #9370DB; -fx-background-radius: 30;" text="rating ★" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="483.0" layoutY="217.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="320.0" style="-fx-background-color: #9370DB; -fx-background-radius: 30;" text="reply" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="665.0" layoutY="509.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="212.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 30;" text="RATING  ★" textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="825.0" layoutY="509.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="265.0" style="-fx-background-color: #FF7F50; -fx-background-radius: 30;" text="replyes" textFill="#1e0101">
+         <font>
+            <Font name="Segoe UI Bold Italic" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="802.0" layoutY="422.0" mnemonicParsing="false" onAction="#rating" prefHeight="43.0" prefWidth="253.0" style="-fx-background-color: #48ffc2;" text="BEST RATING REPLYS">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Rating fx:id="rating" layoutX="266.0" layoutY="309.0" prefHeight="32.0" prefWidth="127.0" rating="0.0" />
+      <ImageView fx:id="image21" fitHeight="56.0" fitWidth="68.0" layoutX="1054.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true" rotate="31.7">
+         <image>
+            <Image url="@97-971713_24-feb-2015-countdown-gif-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image211" fitHeight="95.0" fitWidth="120.0" layoutX="259.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true" rotate="-18.9">
+         <image>
+            <Image url="@67938d_1e75ef3a371345e0b793acadad270fab_mv2.gif" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="-13.0" prefHeight="120.0" prefWidth="1153.0" style="-fx-background-color: #6C80B8;" />
+      <ImageView fx:id="image1" fitHeight="86.0" fitWidth="78.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="117.0" layoutY="17.0" mnemonicParsing="false" prefHeight="69.0" prefWidth="78.0" style="-fx-background-color: #6C80B8;" text="Home" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="220.0" layoutY="23.0" mnemonicParsing="false" onAction="#Forum" prefHeight="58.0" prefWidth="61.0" style="-fx-background-color: #6C80B8;" text="Forum" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="307.0" layoutY="24.0" mnemonicParsing="false" onAction="#profilSDF" prefHeight="58.0" prefWidth="103.0" style="-fx-background-color: #6C80B8;" text="Profil SDF" textFill="WHITE" />
+      <Button layoutX="434.0" layoutY="25.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="118.0" style="-fx-background-color: #6C80B8;" text="Evenement" textFill="WHITE" />
+      <Button layoutX="575.0" layoutY="25.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="58.0" prefWidth="96.0" style="-fx-background-color: #6C80B8;" text="Reclamtion" textFill="WHITE" />
+      <Button layoutX="711.0" layoutY="27.0" mnemonicParsing="false" onAction="#prive" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #6C80B8;" text="Participation prive" textFill="WHITE" />
+      <Button layoutX="713.0" layoutY="54.0" mnemonicParsing="false" onAction="#ppublic" prefHeight="31.0" prefWidth="165.0" style="-fx-background-color: #6C80B8;" text="Participation public" textFill="WHITE" />
+      <Button layoutX="973.0" layoutY="36.0" mnemonicParsing="false" onAction="#profil" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #D9DC7D;" text="modifier profil" />
+      <Button layoutX="999.0" layoutY="73.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: RED;" text="Log Out ">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
