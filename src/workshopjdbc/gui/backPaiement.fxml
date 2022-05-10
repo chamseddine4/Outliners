@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="914.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="workshopjdbc.gui.BackPaiementController">
+   <children>
+      <TableView fx:id="tablePaiement" layoutX="155.0" layoutY="161.0" prefHeight="296.0" prefWidth="746.0">
+        <columns>
+          <TableColumn fx:id="idNompaie" prefWidth="210.0" text="Nom sur carte" />
+            <TableColumn fx:id="idNumpaie" prefWidth="175.0" text="Numéro du carte" />
+            <TableColumn fx:id="idMoispaie" prefWidth="130.0" text="Mois Exp" />
+            <TableColumn fx:id="idAnneepaie" prefWidth="130.0" text="Annee Exp" />
+            <TableColumn fx:id="idCVVpaie" prefWidth="99.0" text="CVV" />
+            <TableColumn fx:id="idID" prefWidth="99.0" text="ID" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="102.0" fitWidth="97.0" layoutX="780.0" layoutY="512.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@logo.png" />
+         </image>
+         <styleClass>
+            <String fx:value="envoyer_btn" />
+            <String fx:value="content-area-circle-btns" />
+            <String fx:value="img" />
+         </styleClass>
+      </ImageView>
+      <Button layoutX="372.0" layoutY="549.0" mnemonicParsing="false" onAction="#dell" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #D9362B;" text="Delete" textFill="#f5f3f3">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button layoutX="513.0" layoutY="549.0" mnemonicParsing="false" onAction="#pdf2" prefHeight="50.0" prefWidth="94.0" style="-fx-background-color: #2BA0D9;" text="PDF" textFill="#f5f3f3">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Pane prefHeight="622.0" prefWidth="147.0" style="-fx-background-color: #395777;">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="97.0" layoutX="25.0" layoutY="15.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@street-beggar-hungry-man-asks-money-mug-hand-72811677.jpg" />
+               </image>
+               <styleClass>
+                  <String fx:value="envoyer_btn" />
+                  <String fx:value="content-area-circle-btns" />
+                  <String fx:value="img" />
+               </styleClass>
+            </ImageView>
+            <Button layoutX="15.0" layoutY="100.0" mnemonicParsing="false" onAction="#admin" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Admin" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="213.0" mnemonicParsing="false" onAction="#user" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Users" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="258.0" mnemonicParsing="false" onAction="#ppublic" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Participation public" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="351.0" mnemonicParsing="false" onAction="#forum" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Forum" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="395.0" mnemonicParsing="false" onAction="#reclamation" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="reclamation" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="440.0" mnemonicParsing="false" onAction="#Evenement" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Evenement" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="483.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Post" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#profilSDF" prefHeight="26.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="profil SDF" textFill="WHITE" />
+            <Button layoutX="15.0" layoutY="303.0" mnemonicParsing="false" onAction="#prive" prefHeight="25.0" prefWidth="128.0" style="-fx-background-color: #d6ac22;" text="Participation prive" textFill="WHITE" />
+         </children>
+      </Pane>
+      <MenuBar layoutX="147.0" layoutY="-1.0" prefHeight="93.0" prefWidth="767.0" style="-fx-background-color: #395777;" />
+      <Label layoutX="344.0" layoutY="16.0" prefHeight="74.0" prefWidth="288.0" text="Paiement" textAlignment="CENTER" textFill="#d6ac22">
+         <font>
+            <Font name="Bookman Old Style" size="54.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

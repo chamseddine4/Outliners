@@ -1,0 +1,89 @@
+.button {
+    -fx-opacity: 1.0;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
+}
+
+#buttonAdd{
+        -fx-background-color: #2e8b57;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+}
+
+.buttonDelete{
+    -fx-background-color: #e71e1e;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-opacity: 1.0;
+}
+
+.buttonDelete:hover{
+    -fx-background-color: #e71e1e;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-opacity: 0.6;
+}
+
+.buttonImport{
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-text-fill: black;
+    -fx-pref-width: 91;
+    -fx-pref-height: 10;
+    -fx-opacity: 1.0;
+}
+
+.buttonImport:hover{
+    -fx-background-color: #2e8b57;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-text-fill: white;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-opacity: 0.6;
+}
+
+.buttonSafe{
+    -fx-background-color: #1fe5bc;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-text-fill: white;
+    -fx-opacity: 1.0;
+}
+
+.buttonSafe:hover{
+    -fx-background-color: #1fe5bc;
+    -fx-border-color: transparent;
+    -fx-font-family: Quicksand;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-pref-width: 100;
+    -fx-pref-height: 40;
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
+}
+
+
