@@ -1,0 +1,79 @@
+.sidepannel{
+    -fx-background-color: #292728;
+}
+.contentPane{
+    -fx-background-color: #fff;
+}
+.redPanel{
+    -fx-background-color: #B20837;
+}
+
+.button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px ;
+}
+
+.button:hover{
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-text-fill: #292728;
+}
+
+.buttonConnect{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+
+.buttonConnect:hover{
+    -fx-background-color: rgba(0, 168, 107, 0.51);
+    -fx-background-radius: 0px;
+}
+
+.roundedCorners{
+    -fx-background-color: rgba(171, 171, 171, 0.5);
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+
+.textAreaDon{
+    -fx-background-color: white;
+    -fx-background-radius: 0px;
+    -fx-border-style: solid;
+    -fx-border-width: 1px 0px 1px 1px;
+    -fx-border-color: rgb(140, 211, 248);
+    -fx-text-fill: rgb(88, 114, 248);
+}
+
+.comboBoxDon{
+    -fx-background-color: white;
+    -fx-background-radius: 0px;
+    -fx-border-style: solid;
+    -fx-border-width: 1px 1px 1px 0px;
+    -fx-border-color: rgb(140,211,248);
+    -fx-border-radius: 0px;
+}
+
+.paneBgImage{
+    -fx-background-image: url("../images/Background.jpeg");
+}
+
+.buttonDonate{
+    -fx-background-color: #5054ff;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-text-fill: white;
+    -fx-font-family: "Quicksand Medium";
+    -fx-pref-height: 50;
+    -fx-pref-width: 120;
+    -fx-font-size: 16px;
+}
+
+.buttonAjouterPanier{
+    -fx-background-color: #ff6761;
+    -fx-background-radius: 0px;
+    -fx-border-radius: 0px;
+    -fx-text-fill: white;
+    -fx-font-family: "Raleway Medium";
+    -fx-pref-height: 50;
+    -fx-pref-width: 150;
+    -fx-font-size: 14px;
+}
