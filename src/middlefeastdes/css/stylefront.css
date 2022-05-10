@@ -1,0 +1,198 @@
+.button{
+    -fx-background-color: #fafafa;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.button:hover{
+    -fx-background-color: #1a1a1a;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.button:pressed{
+    -fx-background-color: #0a0a0a;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane {
+    -fx-background-color: #02030a;
+}
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color: transparent;
+}
+
+.increment-button, .decrement-button{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb{
+    -fx-background-color: #332940;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: #121212;
+}
+
+#viewProductBtn {
+    -fx-border-color: #03dac5;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#viewProductBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #03dac5;
+    -fx-font-size: 14;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductBtn {
+    -fx-border-color: #03dac5;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #03dac5;
+    -fx-font-size: 14px;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductBikeBtn {
+    -fx-border-color: #bb8cfc;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductBikeBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductAccessoriesBtn {
+    -fx-border-color: #bb8cfc;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductAccessoriesBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductPiecesBtn {
+    -fx-border-color: #bb8cfc;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductPiecesBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductRentBtn {
+    -fx-border-color: #bb8cfc;
+    -fx-border-radius: 0;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+#addProductRentBtn:hover {
+    -fx-border-color: transparent;
+    -fx-border-radius: 0;
+    -fx-border-width: 0;
+    -fx-background-radius: 0;
+    -fx-background-color: #bb8cfc;
+    -fx-font-size: 14px;
+    -fx-text-fill: #121212;
+    -fx-pref-height: 40;
+    -fx-pref-width: 100;
+}
+
+.text-field{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0;
+    -fx-border-style: none;
+    -fx-border-radius: 0;
+}
